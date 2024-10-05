@@ -8,9 +8,9 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = ({ todos }) => {
   return (
-    <div className='w-full'>
+    <div className="w-full">
       {todos.length > 0 ? (
-        <ul role='list' aria-label='todo-list'>
+        <ul role="list" aria-label="todo-list">
           {todos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}

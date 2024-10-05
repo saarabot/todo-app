@@ -8,8 +8,8 @@ interface TodoItemProps {
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   return (
     <li
-      className='flex justify-between items-center p-4 bg-white shadow-md rounded mb-2'
-      role='listitem'
+      className="flex justify-between items-center p-4 bg-white shadow-md rounded mb-2"
+      role="listitem"
       aria-label={
         todo.completed ? `${todo.label}, completed` : `${todo.label}, pending`
       }
@@ -18,7 +18,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
         className={`block ${
           todo.completed ? 'line-through text-gray-500' : ''
         }`}
-        aria-hidden='true'
+        aria-hidden="true"
       >
         {todo.label}
       </span>

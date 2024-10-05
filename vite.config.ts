@@ -11,5 +11,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
     exclude: [...configDefaults.exclude],
+    coverage: {
+      exclude: ['**/*.config.{js,ts}'],
+    },
   },
 });
