@@ -30,6 +30,6 @@ jobs:
       - name: Run prettier
         run: npm run format
       - name: Run TypeScript type check
-        run: npx tsc --noEmit # Directly run tsc without needing an npm script
+        run: npx tsc -b --noEmit # Directly run tsc without needing an npm script
       - name: Build the project
         run: npm run build --if-present
