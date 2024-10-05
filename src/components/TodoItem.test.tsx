@@ -11,9 +11,16 @@ describe('TodoItem', () => {
     completed: false,
   };
   const onClickDelete = vi.fn();
+  const toggleTodoStatus = vi.fn();
 
   it('should display the correct label and status', () => {
-    render(<TodoItem todo={todo} onClickDelete={onClickDelete} />);
+    render(
+      <TodoItem
+        todo={todo}
+        onClickDelete={onClickDelete}
+        toggleTodoStatus={toggleTodoStatus}
+      />
+    );
 
     expect(screen.getByText(/Sample Todo/i)).toBeInTheDocument();
     expect(screen.getByText(/Pending/i)).toBeInTheDocument();
@@ -21,7 +28,13 @@ describe('TodoItem', () => {
 
   it('should display completed status when todo is done', () => {
     const completedTodo = { ...todo, completed: true };
-    render(<TodoItem todo={completedTodo} onClickDelete={onClickDelete} />);
+    render(
+      <TodoItem
+        todo={completedTodo}
+        onClickDelete={onClickDelete}
+        toggleTodoStatus={toggleTodoStatus}
+      />
+    );
 
     expect(screen.getByText(/Completed/i)).toBeInTheDocument();
   });

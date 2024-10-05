@@ -9,22 +9,41 @@ describe('TodoList', () => {
     { id: 2, label: 'Todo 2', completed: true },
   ];
   const removeTodo = vi.fn();
+  const toggleTodoStatus = vi.fn();
 
   it('should render a list of todos', () => {
-    render(<TodoList todos={todos} removeTodo={removeTodo} />);
+    render(
+      <TodoList
+        todos={todos}
+        removeTodo={removeTodo}
+        toggleTodoStatus={toggleTodoStatus}
+      />
+    );
 
     expect(screen.getByText(/Todo 1/i)).toBeInTheDocument();
     expect(screen.getByText(/Todo 2/i)).toBeInTheDocument();
   });
 
   it('should not render anything when no todos exist', () => {
-    render(<TodoList todos={[]} removeTodo={removeTodo} />);
+    render(
+      <TodoList
+        todos={[]}
+        removeTodo={removeTodo}
+        toggleTodoStatus={toggleTodoStatus}
+      />
+    );
 
     expect(screen.queryByRole('list')).toBeNull();
   });
 
   it('should call removeTodo when delete button is clicked', () => {
-    render(<TodoList todos={todos} removeTodo={removeTodo} />);
+    render(
+      <TodoList
+        todos={todos}
+        removeTodo={removeTodo}
+        toggleTodoStatus={toggleTodoStatus}
+      />
+    );
 
     // Simulate clicking the delete button for "Todo 1"
     fireEvent.click(screen.getAllByRole('button', { name: /delete-todo/i })[0]);
