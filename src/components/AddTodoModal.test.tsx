@@ -1,6 +1,7 @@
 // src/components/AddTodoModal.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import AddTodoModal from './AddTodoModal';
+import { vi } from 'vitest';
 
 describe('AddTodoModal', () => {
   it('should render the modal and handle form submission', () => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 import AddTodoModal from './components/AddTodoModal';
-import { TodoItem } from './types';
+import { TodoItem } from '../types';
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<TodoItem[]>([]);
