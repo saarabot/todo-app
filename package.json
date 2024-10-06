@@ -13,7 +13,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
     "typecheck": "tsc -b --noEmit",
     "check": "npm run typecheck && npm run format",
-    "prepare": "husky"
+    "prepare": "if [ \"$CI\" != \"true\" ]; then husky install; fi"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",

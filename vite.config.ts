@@ -15,4 +15,7 @@ export default defineConfig({
       exclude: ['**/*.config.{js,ts}'],
     },
   },
+  server: {
+    port: 3000,
+  },
 });
